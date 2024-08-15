@@ -11,9 +11,10 @@
     <h1 class="animated-title">CalcPro Plus</h1>
     <div class="main">
         <form action="" name="Calculator">
-
-            <input type="text" class="text maincolor" name="text1" value="" disabled> 
-            <input type="text" class="text1 maincolor" name="text12" value="C" onclick="location.reload()"><br> 
+            <div class="input-container">
+                <input type="text" class="text maincolor" name="text1" value="" disabled> 
+                <input type="button" class="clear-input-button" name="text12" value="C" onclick="clearInput()">
+            </div>
 
             <input type="button" class="num maincolor" name="btn9" value="9" onclick="displaynum(btn9.value)"> 
             <input type="button" class="num maincolor" name="btn8" value="8" onclick="displaynum(btn8.value)">
@@ -43,7 +44,7 @@
             <div id="history"></div>
 
             <!-- Botão para limpar o histórico -->
-        <button type="button" class="clear-history-button" onclick="clearHistory()">Clear</button>
+            <button type="button" class="clear-history-button" onclick="clearHistory()">Clear</button>
 
         </form>
     </div>
