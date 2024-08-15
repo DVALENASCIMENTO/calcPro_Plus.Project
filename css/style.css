@@ -48,6 +48,11 @@ header {
     align-items: center;
 }
 
+.input-container {
+    display: flex; /* Flex para alinhar o input e o botão de limpar */
+    align-items: center; /* Alinhamento vertical */
+}
+
 input {
     color: #ffffff;
     padding: 17px;
@@ -72,9 +77,9 @@ input {
 }
 
 .text1 {
-    width: 24px;
-    height: 26px;
-    border-radius: 50%;
+    width: 64px; /* Aumentando a largura do botão de entrada */
+    height: 67px; /* Aumentando a altura do botão de entrada */
+    border-radius: 25%; /* Bordas arredondadas */
     letter-spacing: 5px;
     text-align: center;
     margin-bottom: 12px;
@@ -111,6 +116,23 @@ input {
 
 .del-button {
     width: 132px; /* Dobrando a largura do botão */
+}
+
+/* Estilos para o botão de limpar a entrada */
+.clear-input-button {
+    width: 64px; /* Largura do botão */
+    height: 67px; /* Altura do botão */
+    background-color: #ff0000; /* Cor de fundo vermelha */
+    color: #ffffff; /* Cor do texto branca */
+    font-size: 30px; /* Tamanho da fonte */
+    border: none; /* Sem borda */
+    border-radius: 25%; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de pointer ao passar o mouse */
+    transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+}
+
+.clear-input-button:hover {
+    background-color: #cc0000; /* Cor de fundo ao passar o mouse */
 }
 
 /* Estilos para o histórico */
