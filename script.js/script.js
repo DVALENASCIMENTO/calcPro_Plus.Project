@@ -4,8 +4,13 @@ function displaynum(n1) {
 
 function calculate() {
     var expression = Calculator.text1.value;
-    var result = eval(expression);
-    updateHistory(expression, result);
+    try {
+        var result = eval(expression); // Avalia a expressão
+        updateHistory(expression, result); // Atualiza o histórico
+        Calculator.text1.value = result; // Mostra o resultado no campo de entrada
+    } catch (e) {
+        Calculator.text1.value = "Error"; // Exibe "Error" em caso de erro na avaliação
+    }
 }
 
 function deleteLastChar() {
@@ -21,7 +26,6 @@ var historyDisplay = document.getElementById("history");
 
 function updateHistory(expression, result) {
     historyDisplay.innerText += `\n${expression} = ${result}`;
-    Calculator.text1.value = "";
 }
 
 function insertComma() {
@@ -42,6 +46,9 @@ function calculatePercentage() {
     }
 }
 
+function clearHistory() {
+    historyDisplay.innerText = ""; // Limpa o conteúdo da div de histórico
+}
 
 // Adiciona um evento de teclado para a página inteira
 document.addEventListener('keydown', function(event) {
@@ -87,6 +94,5 @@ document.addEventListener('keydown', function(event) {
         case "%":
             calculatePercentage();
             break;
-        // Adicione mais casos conforme necessário para outros botões
     }
 });
