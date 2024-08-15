@@ -1,15 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-body{
+body {
+    margin: 0;
     width: 100%;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background: #010213;
+    font-family: 'Bebas Neue', cursive;
 }
 
-input{
+header {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.animated-title {
+    font-size: 48px; /* Tamanho da fonte */
+    font-weight: bold;
+    background: linear-gradient(270deg, #ff0000, #ff9900, #00ff00, #0000ff, #9900ff);
+    background-size: 1000%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-animation 10s ease infinite, blink-animation 1.5s step-start infinite;
+    text-align: center;
+    margin: 20px 0;
+}
+
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes blink-animation {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
     color: #ffffff;
     padding: 17px;
     outline: none;
@@ -18,12 +57,12 @@ input{
     border-radius: 25%;
 }
 
-.num{
+.num {
     width: 64px;
     height: 67px;
 }
 
-.text{
+.text {
     width: 160px;
     height: 26px;
     border-radius: 22px;
@@ -32,7 +71,7 @@ input{
     margin-bottom: 12px;   
 }
 
-.text1{
+.text1 {
     width: 24px;
     height: 26px;
     border-radius: 50%;
@@ -42,31 +81,27 @@ input{
     cursor: pointer;
 }
 
-.main{
-    display: inline-block;
-}
-
-.maincolor{
+.maincolor {
     background-color: #000;
 }
 
-.blue{
+.blue {
     background-color: rgb(116, 189, 34);
 }
 
-.pin{
+.pin {
     background-color: rgb(236, 72, 72);
 }
 
-.gre{
+.gre {
     background-color: rgb(37, 37, 238);
 }
 
-.pur{
+.pur {
     background-color: #793fee;
 }
 
-.ora{
+.ora {
     background-color: #fcb707;
 }
 
@@ -78,11 +113,50 @@ input{
     width: 132px; /* Dobrando a largura do botão */
 }
 
-
 /* Estilos para o histórico */
 #history {
     color: #ffffff;
     font-family: 'Bebas Neue', cursive;
     font-size: 20px;
     margin-top: 10px;
+}
+
+.clear-history-button {
+    margin-top: 10px;
+    padding: 2px 50px;
+    background-color: #ff0000; /* Cor de fundo vermelha */
+    color: #ffffff; /* Cor do texto branca */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.clear-history-button:hover {
+    background-color: #cc0000; /* Cor de fundo ao passar o mouse */
+}
+
+footer {
+    background-color: #010213; /* Cor de fundo combinando com o tema */
+    color: #ffffff; /* Cor do texto */
+    text-align: center; /* Centralizar o texto */
+    padding: 15px 0; /* Espaçamento interno */
+    width: 100%; /* Largura total do footer */
+    font-family: 'Bebas Neue', cursive;
+}
+
+footer p {
+    margin: 5px 0; /* Espaçamento entre os parágrafos */
+}
+
+footer a {
+    color: #fcb707; /* Cor dos links */
+    text-decoration: none; /* Remover sublinhado dos links */
+    margin: 0 10px; /* Espaçamento entre os links */
+    font-size: 18px;
+}
+
+footer a:hover {
+    text-decoration: underline; /* Adicionar sublinhado ao passar o mouse */
 }
